@@ -17,7 +17,7 @@ export class UserService {
   createUser(user: any): Promise<InsertResult>{
     try {
       const userEntity = this.userRepository.create(user)
-      const res = await this.userRepository.insert(userEntity)
+      const res = this.userRepository.insert(userEntity)
       Logger.log('create user')
       return res
     } catch (e) {
